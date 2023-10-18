@@ -16,4 +16,10 @@ public class FunRestController {
         return "Ran 5k today!";
     }
 
+     //expose a new endpoint for "fortune"
+    @GetMapping("/fortune")
+    public String getFortune(){
+        return "Today is your Lucky day.";
+    }
+
 }

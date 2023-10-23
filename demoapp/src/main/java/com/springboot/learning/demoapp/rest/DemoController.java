@@ -16,15 +16,16 @@ private Coach myCoach;
 //Option 1. define Constructor for the dependency (using autowired annotation)
 //autowired tells spring to inject a dependency
 @Autowired
-public DemoController(@Qualifier("cricketCoach") Coach theCoach){
+public DemoController(Coach theCoach){
     myCoach=theCoach;
 }
 
 /*
 //Option 2. define setter injection
 //use setCoach() or you can use any method name
+//@Qualifier used to specify when multiple implementations exists
 @Autowired
-public void setCoach(Coach myCoach){
+public void setCoach(@Qualifier("cricketCoach") Coach myCoach){
     this.myCoach=myCoach;
 }
 */

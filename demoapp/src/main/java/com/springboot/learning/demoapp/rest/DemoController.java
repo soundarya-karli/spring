@@ -11,14 +11,18 @@ public class DemoController {
 
 //define private field for the dependency
 private Coach myCoach;
+private Coach anotherCoach;
 
 
 //Option 1. define Constructor for the dependency (using autowired annotation)
 //autowired tells spring to inject a dependency
 @Autowired
-public DemoController(@Qualifier("cricketCoach") Coach theCoach){
+public DemoController(
+        @Qualifier("cricketCoach") Coach theCoach,
+        @Qualifier("cricketCoach") Coach theanotherCoach){
     System.out.println("In Constructor: "+getClass().getSimpleName());
     myCoach=theCoach;
+    anotherCoach=theanotherCoach;
 }
 
 /*
@@ -36,6 +40,11 @@ public String getDailyWorkout(){
     return myCoach.getDailyWorkout();
 }
 
+//2 bean scopes(by default bean scope is singleton)-->true for singleton, false for prototype
+@GetMapping("/check")
+public String check(){
+    return "Comparing Beans myCoach=anotherCoach: "+(myCoach==anotherCoach);
+}
 
 
 }

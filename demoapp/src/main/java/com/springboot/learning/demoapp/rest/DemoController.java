@@ -18,7 +18,7 @@ private Coach anotherCoach;
 //autowired tells spring to inject a dependency
 @Autowired
 public DemoController(
-        @Qualifier("cricketCoach") Coach theCoach,
+        @Qualifier("swimCoach") Coach theCoach,
         @Qualifier("cricketCoach") Coach theanotherCoach){
     System.out.println("In Constructor: "+getClass().getSimpleName());
     myCoach=theCoach;
@@ -41,7 +41,7 @@ public String getDailyWorkout(){
 }
 
 //2 bean scopes(by default bean scope is singleton)-->true for singleton, false for prototype
-@GetMapping("/check")
+ @GetMapping("/check")
 public String check(){
     return "Comparing Beans myCoach=anotherCoach: "+(myCoach==anotherCoach);
 }

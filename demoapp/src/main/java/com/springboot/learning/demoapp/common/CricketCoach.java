@@ -19,16 +19,16 @@ public class CricketCoach implements Coach{
         return "Practice fast bowling for 30 mins :)!!!!!!";
     }
 
-    //Bean Lifecycyle:define init methd
+    //Bean Lifecycle:define init methd
     @PostConstruct
     public void doMyStartupStuff(){
         System.out.println("In doMyStartupStuff() "+getClass().getSimpleName());
     }
 
-    //Bean Lifecycyle:define destroy method
+    //Bean Lifecycle:define destroy method
     @PreDestroy
     public void doMyCleanupStuff(){
         System.out.println("In doMyCleanupStuff() "+getClass().getSimpleName());
     }
-
+ 
 }
